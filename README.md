@@ -2,7 +2,8 @@
 NDA encoder is used to compress data using different algorithmic techniques, The proposed architecture is given below, which stores the image data in a compressed format. #encoder_DCT , #image_compression #verilog
 
 An image is divided into subsegments of 64-pixel size. Each segment undergoes a transformation using the Discrete Cosine Transform (DCT) and produces a series of coefficients that represent the image's frequency content. These coefficients are organized into a matrix called a quantization table.
- 
+ ![image](https://user-images.githubusercontent.com/130048247/234757848-f2931d53-57b8-44d8-be79-dc447e77fca8.png)
+
 The quantization table contains entries used to quantize the frequency coefficients to reduce the amount of data required to store the image. Quantization involves dividing each coefficient by a corresponding value in the quantization table and rounding the result to the nearest integer.
 
 After quantization, the compressed data is further compressed using variable-length coding. This involves assigning shorter codes to more frequently occurring values and longer codes to less frequently occurring values, resulting in a reduction in the amount of data required to represent the compressed image.
@@ -40,13 +41,13 @@ The resulting matrix of transformed coefficients represents the image in the fre
 
 1D  DCT algorithm
 
-
-
+![image](https://user-images.githubusercontent.com/130048247/234757889-3447f3e6-1d2c-48f7-9219-c3eee2999f9d.png)
 
 
 The proposed algorithm is using only 29 addition and 5 multiplications, which is comparatively very less hardware usage by the primitive methods
 
- 
+ ![image](https://user-images.githubusercontent.com/130048247/234757902-375e05aa-0c0f-4669-b064-e0472b2db0fb.png)
+
 
 
 
@@ -55,7 +56,9 @@ Quantization
 Quantization is achieved by dividing each element in the transformed image matrix D by the corresponding element in the quantization matrix and then rounding to the nearest integer value. For the following step, the quantization matrix Q50 is used.
 
 
+![image](https://user-images.githubusercontent.com/130048247/234757924-4d32a52d-2ff0-4ebc-b252-996b3803f9df.png)
 
+![image](https://user-images.githubusercontent.com/130048247/234757936-1136a589-6176-483e-8f17-773aab4364ed.png)
 
 
  
@@ -65,11 +68,13 @@ Where matrix D is the output after 2D DCT transformation.
 Huffman coding
 Huffman coding is a variable-length entropy coding technique used to compress data by assigning shorter codes to more frequently occurring symbols in the data. It can be used as a post-processing step after 2D DCT (Discrete Cosine Transform) to further reduce the amount of data needed to represent an image.
 Overall, the advantages of using Huffman coding after 2D DCT include efficient use of memory, high compression ratios, a flexible coding scheme, and fast decoding.
+![image](https://user-images.githubusercontent.com/130048247/234757966-e937b7ae-5ca2-4ea6-9ce4-bdc4db78123f.png)
 
 
 Before storage all coefficients of  Matrix C are converted by an encoder to a stream of binary data (01101011….) by the order given in the below figure.
 
 
+![Uploading image.png…]()
 
 
  
