@@ -1,4 +1,4 @@
-# NDA-DCT-encoder
+## NDA-DCT-encoder
 NDA encoder is used to compress data using different algorithmic techniques, The proposed architecture is given below, which stores the image data in a compressed format. #encoder_DCT , #image_compression #verilog
 
 An image is divided into subsegments of 64-pixel size. Each segment undergoes a transformation using the Discrete Cosine Transform (DCT) and produces a series of coefficients that represent the image's frequency content. These coefficients are organized into a matrix called a quantization table.
@@ -9,7 +9,7 @@ The quantization table contains entries used to quantize the frequency coefficie
 After quantization, the compressed data is further compressed using variable-length coding. This involves assigning shorter codes to more frequently occurring values and longer codes to less frequently occurring values, resulting in a reduction in the amount of data required to represent the compressed image.
 
 When a JPEG image is decompressed, the compressed data is first decoded using the variable-length coding, and then the quantized frequency coefficients are reconstructed using the quantization table. The inverse Discrete Cosine Transform (IDCT) is then applied to the reconstructed coefficients to obtain the image data in the spatial domain, which can be displayed on a screen or printed on paper.
-2D DCT 
+#2D DCT 
 A 2D Discrete Cosine Transform (DCT) can be computed by applying a 1D DCT to each row of the image, followed by a 1D DCT on each column of the resulting matrix of transformed rows. 
 Here's how the process works:
 •	Apply a 1D DCT to each row of the image:
@@ -39,7 +39,7 @@ The resulting matrix of transformed coefficients represents the image in the fre
 
 
 
-1D  DCT algorithm
+#1D  DCT algorithm
 
 ![image](https://user-images.githubusercontent.com/130048247/234757889-3447f3e6-1d2c-48f7-9219-c3eee2999f9d.png)
 
@@ -57,7 +57,7 @@ The proposed algorithm is using only 29 addition and 5 multiplications, which is
 
 
 
-Quantization 
+#Quantization 
 
 Quantization is achieved by dividing each element in the transformed image matrix D by the corresponding element in the quantization matrix and then rounding to the nearest integer value. For the following step, the quantization matrix Q50 is used.
 
@@ -73,7 +73,7 @@ Quantization is achieved by dividing each element in the transformed image matri
 Where matrix D is the output after 2D DCT transformation. 
 
 
-Huffman coding
+#Huffman coding
 
 
 
@@ -99,8 +99,11 @@ This involves assigning shorter codes to more frequently occurring values and lo
 Reference
 
 A.	S. E. Tsai, S. M. Yang, "A Fast DCT Algorithm for Watermarking in Digital Signal Processor", Mathematical Problems in Engineering, vol. 2017, Article ID 7401845, 7 pages, 2017. https://doi.org/10.1155/2017/7401845
+
 B.	M. Kovac and N. Ranganathan, “VLSI circuit structure for implementing JPEG image compression standard,” US patent US5659362, 1997.
-C.	M. Kovac and N. Ranganathan, “JAGUAR: a fully pipelined VLSI architecture for JPEG image compression standard,” Proceedings of the IEEE, vol. 83, no. 2, pp. 247–258, 1995.
+C.	M. Kovac and N. Ranganathan, “JAGUAR: a fully pipelined VLSI architecture for JPEG image compression standard,” Proceedings of the IEEE, vol.
+83, no. 2, pp. 247–258, 1995.
+
 D.	K. Cabeen and P. Gent, “Image Compression and Discrete Cosine Transform,” College of Redwoods. http://online.redwoods.cc.ca.us/instruct/darnold/LAPROJ/Fall98/PKen/dct.pdf
 
 E.	https://www.youtube.com/watch?v=Q2aEzeMDHMA&t=15s
