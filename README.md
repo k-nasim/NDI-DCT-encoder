@@ -1,4 +1,4 @@
-# # NDA-DCT-encoder
+#  NDA-DCT-encoder
 NDA encoder is used to compress data using different algorithmic techniques, The proposed architecture is given below, which stores the image data in a compressed format. #encoder_DCT , #image_compression #verilog
 
 An image is divided into subsegments of 64-pixel size. Each segment undergoes a transformation using the Discrete Cosine Transform (DCT) and produces a series of coefficients that represent the image's frequency content. These coefficients are organized into a matrix called a quantization table.
